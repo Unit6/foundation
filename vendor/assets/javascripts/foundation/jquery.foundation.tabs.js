@@ -8,7 +8,7 @@
     
     var activateTab = function ($tab) {
       var $activeTab = $tab.closest('dl').find('dd.active'),
-          contentLocation = $tab.children('a').attr("href") + 'Tab';
+          contentLocation = $tab.children('a').attr("href");
 
       // Strip off the current url that IE adds
       contentLocation = contentLocation.replace(/^.+#/, '#');
@@ -22,7 +22,7 @@
       $(contentLocation).css('display', 'block').addClass('active');
     };
     
-    $('dl.tabs dd a', this).on('click.fndtn', function (event){
+    $(document).on('click.fndtn', 'dl.tabs dd a', function(event) {
       activateTab($(this).parent('dd'));
     });
     
