@@ -424,7 +424,7 @@
     }
   });
 
-  $('form.custom div.custom.dropdown a.current, form.custom div.custom.dropdown a.selector').live('click', function (event) {
+  $(document).on('click', 'form.custom div.custom.dropdown a.current, form.custom div.custom.dropdown a.selector', function (event) {
     var $this = $(this),
         $dropdown = $this.closest('div.custom.dropdown'),
         $select = $dropdown.prev();
@@ -447,7 +447,7 @@
     }
   });
 
-  $('form.custom div.custom.dropdown li').live('click', function (event) {
+  $(document).live('click', 'form.custom div.custom.dropdown li', function (event) {
     var $this = $(this),
         $customDropdown = $this.closest('div.custom.dropdown'),
         $select = $customDropdown.prev(),

@@ -1,7 +1,8 @@
 /*! http://mths.be/placeholder v2.0.7 by @mathias */
-;(function(window, document, $) {
-
-	var isInputSupported = 'placeholder' in document.createElement('input'),
+(function($, window) {
+		  
+	var document = window.document,
+		isInputSupported = 'placeholder' in document.createElement('input'),
 	    isTextareaSupported = 'placeholder' in document.createElement('textarea'),
 	    prototype = $.fn,
 	    valHooks = $.valHooks,
@@ -67,7 +68,7 @@
 
 		$(function() {
 			// Look for forms
-			$(document).delegate('form', 'submit.placeholder', function() {
+			$(document).on('submit.placeholder', 'form', function() {
 				// Clear the placeholder values so they don't get submitted
 				var $inputs = $('.placeholder', this).each(clearPlaceholder);
 				setTimeout(function() {
@@ -154,4 +155,4 @@
 		}
 	}
 
-}(this, document, jQuery));
+}(jQuery, window));

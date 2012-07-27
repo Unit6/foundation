@@ -18,7 +18,7 @@
   //
   // Bind the live 'click' event to all anchor elemnets with the data-reveal-id attribute.
   //
-  $( 'a[data-reveal-id]' ).live( 'click', function ( event ) {
+  $( document ).on( 'click', 'a[data-reveal-id]', function ( event ) {
     //
     // Prevent default action of the event.
     //
